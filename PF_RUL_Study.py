@@ -15,7 +15,7 @@ from sklearn.neighbors.kde import KernelDensity
 
 ##########################################################################################
 ########### Select either RUL_AA_Initiation.mat or RUL_AA_Initiation_Mean.mat ############
-file_name = 'G:\My Drive\Research\Fatigue on composites (with Dr Modarres)\Codes\Matlab\RUL_AA_Initiation_Mean.mat'
+file_name = '...\Codes\Matlab\RUL_AA_Initiation_Mean.mat'
 mat = spio.loadmat(file_name, squeeze_me=True)
 ##########################################################################################
 
@@ -316,10 +316,7 @@ m2 = np.random.uniform(0.05,0.7,num_particles) # select initial values using loa
 
 w = np.ones(len(D)) # initialize weights
 delta_rul = 50 # Step size in RUL estimation
-#p_interval = 35000 # Interval in parameter updating
-#h_nf, h_m1, h_m2, h_q = 0.001, 0.01, 0.001, 0.1 # h value in updating each parameter
 h_nf, h_q, h_m1, h_m2 =  0.005, 0.2, 0.1, 0.2 # h value in updating each parameter
-#h_nf, h_q, h_m1, h_m2 =  0.005, 0.01, 0.001, 0.1 # h value in updating each parameter
 
 ################################        Load Measurement data    ###############################
 
@@ -400,18 +397,18 @@ plot_fill(D_hist,N_th,D_th,N_inf,D_inf,test,D_threshold)
 
 rul_figure(N_th,N_inf,rul_est,load_d_mod(test)[0],test,D_threshold)
 
-#bwidth = np.delete(bwidth, 0, 1)
-#update_cycle = np.delete(update_cycle, 0, 1)
+bwidth = np.delete(bwidth, 0, 1)
+update_cycle = np.delete(update_cycle, 0, 1)
 
-#rul_err(Nf_hist,load_d_mod(test)[0]) # print RMSE 
-#mean_rul_err(Nf_hist,load_d_mod(test)[0]) # print average rul
+rul_err(Nf_hist,load_d_mod(test)[0]) # print RMSE 
+mean_rul_err(Nf_hist,load_d_mod(test)[0]) # print average rul
 
 plot_kde(rul_est,24000,34000,load_d_mod(test)[0],test)
-#plot_kde(Nf_hist,15000,40000,load_d_mod(test)[0],test)
-#plot_kde(m1_hist,53,60,load_d_mod(test)[2],test)
-#plot_kde(m2_hist,0,1,load_d_mod(test)[3],test)
-#plot_kde(q_hist,0,1,load_d_mod(test)[1],test)
-#plot_kde(Nf[:,np.newaxis],20000,45000,load_d_mod(test)[0],test)
+plot_kde(Nf_hist,15000,40000,load_d_mod(test)[0],test)
+plot_kde(m1_hist,53,60,load_d_mod(test)[2],test)
+plot_kde(m2_hist,0,1,load_d_mod(test)[3],test)
+plot_kde(q_hist,0,1,load_d_mod(test)[1],test)
+plot_kde(Nf[:,np.newaxis],20000,45000,load_d_mod(test)[0],test)
 
 
 #### for excel file
