@@ -1,1 +1,3 @@
-# Fatigue-crack-initiation-prognostics-based-on-thermodynamic-and-information-entropy-using-dynamic-Ba
+This is the code generated for the conference paper titled: "Fatigue crack initiation prognostics based on thermodynamic and information entropy using dynamic Bayesian network."
+
+This code generated a joint partcile filtereing framework in which both state function and move function are updated as new observations become available. The state process model is defined based on modulus reduction until crack initiation. There are two observation models that used to update the state process model. The observations models are based on thermodynamic entropy measurements and information entropy measurements recorded in the test. Details of those measurements are discussed in details in other journal papers by the authors. 
